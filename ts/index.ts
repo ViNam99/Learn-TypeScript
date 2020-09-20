@@ -95,7 +95,42 @@ let mangThanhVien: [string, number] = ["1", 1]; //tuple
 
 // NguoiDung.say();
 
-class NhanVien {
+// class NhanVien {
+//   public maNV: string;
+//   public tenNV: string;
+//   public luongCB: number;
+//   constructor(maNV: string, tenNV: string, luongCB: number) {
+//     this.maNV = maNV;
+//     this.tenNV = tenNV;
+//     this.luongCB = luongCB;
+//   }
+//   public TinhLuong(): number {
+//     return 1000;
+//   }
+// }
+
+// class TruongPhong extends NhanVien {
+//   public tienHoanHong: number;
+//   constructor(ma: string, ten: string, luong: number, tienHH: number) {
+//     super(ma, ten, luong);
+//     this.tienHoanHong = tienHH;
+//   }
+//   public TinhLuong(): number {
+//     return super.TinhLuong() * 3 + this.tienHoanHong;
+//   }
+// }
+
+// const truongphong1 = new TruongPhong("123", "asdasdasdasd", 10000, 20000);
+// console.log(truongphong1.TinhLuong());
+
+////////////////////////////////////////////////////////INTERFACE///////////////////////////////////////
+interface NhanVieninf {
+  maNV: string;
+  tenNV: string;
+  luongCB?: number;
+  tinhLuong?: () => number;
+}
+class NhanVien implements NhanVieninf {
   public maNV: string;
   public tenNV: string;
   public luongCB: number;
@@ -104,22 +139,10 @@ class NhanVien {
     this.tenNV = tenNV;
     this.luongCB = luongCB;
   }
-  public TinhLuong(): number {
-    return 1000;
+  public tinhLuong(): number {
+    return this.luongCB + 10000;
   }
 }
 
-class TruongPhong extends NhanVien {
-  public tienHoanHong: number;
-  constructor(ma: string, ten: string, luong: number, tienHH: number) {
-    super(ma, ten, luong);
-    this.tienHoanHong = tienHH;
-  }
-  public TinhLuong(): number {
-    return super.TinhLuong() * 3 + this.tienHoanHong;
-  }
-}
-
-const truongphong1 = new TruongPhong("123", "asdasdasdasd", 10000, 20000);
-console.log(truongphong1.TinhLuong());
-
+const nhanvien1 = new NhanVien("123", "Nam", 12000);
+console.log(nhanvien1.tinhLuong());

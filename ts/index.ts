@@ -74,4 +74,52 @@ let mangThanhVien: [string, number] = ["1", 1]; //tuple
 // let sv4 = { ...sv1, ...sv3 };
 // console.log(sv4);
 
+// class NguoiDung {
+//   private hoTen: string;
+//   public matKhau: string;
+//   public taiKhoan: string;
+//   constructor(ht: string, mk: string, tk: string) {
+//     this.hoTen = ht;
+//     this.matKhau = mk;
+//     this.taiKhoan = tk;
+//   }
+//   public getHoten = () => {
+//     return this.hoTen;
+//   };
+//   static say() {
+//     alert("Hello");
+//   }
+// }
+// let nguoidung1 = new NguoiDung("Nhan Vi Nam", "123", "nhanvinam99");
+// console.log(nguoidung1.getHoten());
+
+// NguoiDung.say();
+
+class NhanVien {
+  public maNV: string;
+  public tenNV: string;
+  public luongCB: number;
+  constructor(maNV: string, tenNV: string, luongCB: number) {
+    this.maNV = maNV;
+    this.tenNV = tenNV;
+    this.luongCB = luongCB;
+  }
+  public TinhLuong(): number {
+    return 1000;
+  }
+}
+
+class TruongPhong extends NhanVien {
+  public tienHoanHong: number;
+  constructor(ma: string, ten: string, luong: number, tienHH: number) {
+    super(ma, ten, luong);
+    this.tienHoanHong = tienHH;
+  }
+  public TinhLuong(): number {
+    return super.TinhLuong() * 3 + this.tienHoanHong;
+  }
+}
+
+const truongphong1 = new TruongPhong("123", "asdasdasdasd", 10000, 20000);
+console.log(truongphong1.TinhLuong());
 

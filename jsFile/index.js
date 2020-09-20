@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // Các kiểu dữ liệu
 var trangThai = true;
 var tong = 1;
@@ -58,3 +71,47 @@ var mangThanhVien = ["1", 1]; //tuple
 // // Khi thay đổi thông tin sv1 sv2 cũng sẽ bị thay đổi vì vậy nên ta dùng Spread operator
 // let sv4 = { ...sv1, ...sv3 };
 // console.log(sv4);
+// class NguoiDung {
+//   private hoTen: string;
+//   public matKhau: string;
+//   public taiKhoan: string;
+//   constructor(ht: string, mk: string, tk: string) {
+//     this.hoTen = ht;
+//     this.matKhau = mk;
+//     this.taiKhoan = tk;
+//   }
+//   public getHoten = () => {
+//     return this.hoTen;
+//   };
+//   static say() {
+//     alert("Hello");
+//   }
+// }
+// let nguoidung1 = new NguoiDung("Nhan Vi Nam", "123", "nhanvinam99");
+// console.log(nguoidung1.getHoten());
+// NguoiDung.say();
+var NhanVien = /** @class */ (function () {
+    function NhanVien(maNV, tenNV, luongCB) {
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.luongCB = luongCB;
+    }
+    NhanVien.prototype.TinhLuong = function () {
+        return 1000;
+    };
+    return NhanVien;
+}());
+var TruongPhong = /** @class */ (function (_super) {
+    __extends(TruongPhong, _super);
+    function TruongPhong(ma, ten, luong, tienHH) {
+        var _this = _super.call(this, ma, ten, luong) || this;
+        _this.tienHoanHong = tienHH;
+        return _this;
+    }
+    TruongPhong.prototype.TinhLuong = function () {
+        return _super.prototype.TinhLuong.call(this) * 3 + this.tienHoanHong;
+    };
+    return TruongPhong;
+}(NhanVien));
+var truongphong1 = new TruongPhong("123", "asdasdasdasd", 10000, 20000);
+console.log(truongphong1.TinhLuong());

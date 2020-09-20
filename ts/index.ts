@@ -28,12 +28,50 @@ let mangThanhVien: [string, number] = ["1", 1]; //tuple
 
 // dispayColors("red", "green");
 
-const tinhTongParams = (...numbers: Array<number>) => {
-  let tong: number = 0;
-  numbers.forEach((num) => {
-    tong += num;
-  });
-  return tong;
-};
+// const tinhTongParams = (...numbers: Array<number>) => {
+//   let tong: number = 0;
+//   numbers.forEach((num) => {
+//     tong += num;
+//   });
+//   return tong;
+// };
 
-console.log(tinhTongParams(1, 2, 3, 4, 5));
+// console.log(tinhTongParams(1, 2, 3, 4, 5));
+
+// Spread operator
+
+// let mang1 = [1, 2, 3];
+// let mang2 = [4, 5, 6];
+// let mang3 = [...mang1, ...mang2];
+// console.log(mang3);
+
+// interface sinhvien {
+//   name: string;
+//   age: number;
+// }
+
+// let sv1: sinhvien = {
+//   name: "Nam",
+//   age: 20,
+// };
+
+// let sv2: sinhvien = {
+//   name: "Nhi",
+//   age: 21,
+// };
+
+// let sv3 = {
+//   diem: 10,
+// };
+
+// sv1 = sv2;
+// sv1.name = "asdasdasdasd";
+
+// // console.log(sv1);
+// // console.log(sv2);
+// // Khi thay đổi thông tin sv1 sv2 cũng sẽ bị thay đổi vì vậy nên ta dùng Spread operator
+
+// let sv4 = { ...sv1, ...sv3 };
+// console.log(sv4);
+
+
